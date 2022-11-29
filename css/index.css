@@ -499,6 +499,11 @@ button:hover {
         /* Sizing */
         width: 600px;
     }
+
+    #tab-control-tab-list {
+        /* Positioning */
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -524,11 +529,23 @@ button:hover {
 
     #tab-container {
         /* Sizing */
-        height: 547.2px;
+        height: 497.2px;
         width: auto;
 
         /* Margin & padding */
         margin-bottom: 0;
         margin-left: var(--primary-margin);
+    }
+
+    #tab-control-tab-list {
+        /* Positioning */
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1336px) {
+    #tab-control-tab-list {
+        /* Positioning */
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 }
