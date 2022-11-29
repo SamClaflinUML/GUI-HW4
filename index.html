@@ -1,0 +1,97 @@
+<!-- File: index.html -->
+<!-- Name: Samuel Claflin -->
+<!-- Email: samuel_claflin@student.uml.edu -->
+<!-- Date: 11/23/2022 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/jquery_ui.css">
+    <title>Sam Claflin HW4</title>
+</head>
+<body>
+    <!-- Main Header -->
+    <h1 id="main-header">
+        Multiplication Table Generator
+    </h1>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper">
+        <!-- Main Form -->
+        <form id="main-form">
+            <!-- Multiplier Minimum -->
+            <label for="multiplier-minimum">Multiplier Minimum:</label>
+            <input id="multiplier-minimum" name="multiplier-minimum" type="value">
+            <div class="slider" id="multiplier-minimum-slider"></div> 
+            
+            <!-- Multiplier Maximum -->
+            <label for="multiplier-maximum">Multiplier Maximum:</label>
+            <input id="multiplier-maximum" name="multiplier-maximum" type="value">
+            <div class="slider" id="multiplier-maximum-slider"></div>
+
+            <!-- Multiplicand Minimum -->
+            <label for="multiplicand-minimum">Multiplicand Minimum:</label>
+            <input id="multiplicand-minimum" name="multiplicand-minimum" type="value">
+            <div class="slider" id="multiplicand-minimum-slider"></div>
+
+            <!-- Multiplicand Maximum -->
+            <label for="multiplicand-maximum">Multiplicand Maximum:</label>
+            <input id="multiplicand-maximum" name="multiplicand-maximum" type="value">
+            <div class="slider" id="multiplicand-maximum-slider"></div>
+
+            <!-- Submit Button -->
+            <button id="submit-button" type="submit">Submit</button>
+
+            <!-- Tab Control Button -->
+            <button id="tab-control-button" type="button" onclick="handleTabControlClick()">Tab Control</button>
+        </form>
+
+        <!-- Main Table Container -->
+        <div id="tab-container">
+            <!-- Tab Header -->
+            <ul></ul>
+        </div>
+
+        <!-- Tab Control Popup -->
+        <div id="tab-control-background" onclick="handleTabControlBackgroundClick()"></div>
+        <div id="tab-control-popup">
+            <div id="tab-control-inner-container">
+                <!-- Close Button -->
+                <button id="tab-control-close-button" onclick="handleTabControlCloseButtonClick()">X</button>
+
+                <!-- Header -->
+                <h1 id="tab-control-header">Tab Control</h1>
+
+                <!-- Tab List -->
+                <ul id="tab-control-tab-list"></ul>
+
+                <!-- Delete Button -->
+                <button id="tab-control-delete-button" onclick="handleTabControlDeleteButtonClick()">Delete Selected</button>
+            </div>
+        </div>
+    </div>
+    <!-- JQuery Core -->
+    <script 
+        src="https://code.jquery.com/jquery-3.6.1.js" 
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" 
+        crossorigin="anonymous">
+    </script>
+
+    <!-- JQuery Validation -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+
+    <!-- JQuery UI -->
+    <script 
+        src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" 
+        integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" 
+        crossorigin="anonymous">
+    </script>
+
+    <!-- JS -->
+    <script src="index.js"></script>
+</body>
+</html>

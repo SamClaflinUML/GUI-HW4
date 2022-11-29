@@ -1,0 +1,534 @@
+/* File: index.js */
+/* Name: Samuel Claflin */
+/* Email: samuel_claflin@student.uml.edu  */
+/* Date: 11/23/2022  */
+
+/* Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/**************************************
+ * Custom Styles
+ **************************************/
+
+/* Global Styles */
+* {
+    /* Sizing */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* Font configuration */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Variables */
+:root {
+    --primary-color: rgb(116, 161, 46);
+    --secondary-color: rgb(66, 95, 19); 
+    --gray-color: rgb(197, 197, 197);
+    --red-color: rgb(150, 30, 30);
+    --primary-margin: 20px;
+    --secondary-margin: 10px;
+    --primary-border-radius: 25px;
+    --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Main Header */
+#main-header {
+    /* Sizing */
+    width: 100%;
+    height: 75px;
+
+    /* Font configuration */
+    font-weight: 300;
+    color: white;
+
+    /* Positioning */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    /* Color */
+    background-color: var(--primary-color);
+
+    /* Margin & padding */
+    margin-bottom: var(--primary-margin);
+
+    /* Shadows */
+    box-shadow: var(--box-shadow);
+}
+
+/* Content Wrapper */
+#content-wrapper {
+    /* Sizing */
+    width: 100%;
+
+    /* Positioning */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Main Form */
+#main-form {
+    /* Sizing */
+    width: 400px;
+
+    /* Positioning */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    /* Color */
+    background-color: var(--primary-color);
+
+    /* Margin & padding */
+    padding: 40px;
+    margin-bottom: var(--primary-margin);
+
+    /* Borders */
+    border-radius: var(--primary-border-radius);
+
+    /* Color */
+    color: white;
+
+    /* Shadows */
+    box-shadow: var(--box-shadow);
+}
+
+/* All Children of Main Form */
+#main-form >* {
+    /* Sizing */
+    width: 100%;
+
+    /* Margin & padding */
+    margin-bottom: var(--secondary-margin);
+}
+
+/* All Text Boxes */
+input {
+    /* Sizing */
+    height: 25px;
+
+    /* Margin & padding */
+    padding-left: 5px;
+
+    /* Borders */
+    border: none;
+    border-radius: 10px;
+}
+
+/* Buttons */
+button {
+    /* Sizing */
+    width: 50% !important;
+    height: 40px;
+
+    /* Font configuration */
+    font-size: 16px;
+    color: var(--primary-color);
+
+    /* Color */
+    background-color: white;
+
+    /* Borders */
+    border: 2px solid white;
+    border-radius: var(--primary-border-radius);
+}
+
+/* Buttons Hover */
+button:hover {
+    /* Cursor */
+    cursor: pointer;
+
+    /* Color */
+    background-color: var(--primary-color);
+
+    /* Font configuration */
+    color: white;
+
+    /* Animation configuration */
+    transition-duration: 0.2s;
+}
+
+/* Submit Button */
+#submit-button {
+    /* Margin & padding */
+    margin-top: var(--primary-margin);
+}
+
+/* Tab Container */
+#tab-container {
+    /* Sizing */
+    width: 400px;
+    height: 600px;
+    overflow-y: auto;
+
+    /* Margin & padding */
+    margin-bottom: var(--primary-margin);
+
+    /* Shadows */
+    box-shadow: var(--box-shadow);
+}
+
+/* Main Table Container */
+.table-container {
+    /* Sizing */
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+
+    /* Margin & padding */
+    margin-bottom: var(--primary-margin);
+}
+
+/* Header Row */
+.table-container tr:nth-child(1) {
+    /* Color */
+    background-color: var(--primary-color) !important;
+
+    /* Positioning */
+    position: sticky;
+    top: 0;
+}
+
+/* First Column */
+.table-container td:nth-child(1) {
+    /* Color */
+    background-color: var(--primary-color) !important;
+
+    /* Positioning */
+    position: sticky;
+    left: 0;
+}
+
+/* Even Table Rows */
+.table-container tr:nth-child(odd) {
+    /* Color */
+    background-color: var(--gray-color);
+}
+
+/* All Table Cells */
+.table-container td {
+    /* Margin & padding */
+    padding: 10px;
+
+    /* Font configuration */
+    text-align: center;
+}
+
+/* Hides UI Components */
+.hidden {
+    visibility: hidden;
+}
+
+/* Tab Close Button */
+.tab-close-button {
+    /* Sizing */
+    width: auto !important;
+    height: auto !important;
+
+    /* Margin & padding */
+    padding: 0 !important;
+    margin-right: 15px;
+
+    /* Color */
+    background-color: transparent !important;
+    color: var(--red-color);
+
+    /* Borders */
+    border: none !important;
+
+    /* Font configuration */
+    text-align: center;
+}
+
+/* Tab Close Button Hover */
+.tab-close-button:hover {
+    /* Color */
+    color: black !important;
+}
+
+/* Tab Control Background */
+#tab-control-background {
+    /* Sizing */
+    width: 100%;
+    height: 100%;
+
+    /* Positioning */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+
+    /* Color */
+    background-color: rgba(0, 0, 0, 0.772);
+}
+
+/* Tab Control Background Hover */
+#tab-control-background:hover {
+    /* Cursor */
+    cursor: pointer;
+}
+
+/* Tab Control Popup */
+#tab-control-popup {
+    /* Sizing */
+    width: 90%;
+    height: 90%;
+
+    /* Positioning */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 100000;
+
+    /* Color */
+    background-color: white;
+
+    /* Borders */
+    border-radius: var(--primary-border-radius);
+}
+
+/* Tab Control Inner Container */
+#tab-control-inner-container {
+    /* Sizing */
+    width: 100%;
+    height: 100%;
+
+    /* Positioning */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Tab Control Close Button */
+#tab-control-close-button {
+    /* Sizing */
+    width: auto !important;
+    height: auto !important;
+
+    /* Color */
+    background-color: transparent !important;
+    color: var(--red-color) !important;
+
+    /* Font configuration */
+    font-size: 30px;
+
+    /* Positioning */
+    position: absolute;
+    top: var(--primary-margin);
+    right: var(--primary-margin);
+
+    /* Borders */
+    border: none !important;
+
+    /* Animation configuration */
+    transition-duration: 0s !important;
+}
+
+/* Tab Control Close Button Hover */
+#tab-control-close-button:hover {
+    /* Color */
+    color: black !important;
+}
+
+/* Tab Control Header */
+#tab-control-header {
+    /* Font configuration */
+    font-size: 32px;
+    font-weight: 300;
+
+    /* Margin & padding */
+    margin-top: 30px;
+
+    /* Color */
+    color: var(--primary-color);
+}
+
+/* Tab Control Tab List */
+#tab-control-tab-list {
+    /* Sizing */
+    width: 80%;
+    height: 70%;
+
+    /* Positioning */
+    overflow-y: auto;
+
+    /* Borders */
+    border: 2px solid var(--primary-color);
+    border-radius: var(--primary-border-radius);
+
+    /* Misc */
+    list-style: none;
+
+    /* Positioning */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+
+    /* Margin & padding */
+    padding: var(--primary-margin);
+}
+
+/* Tab Control List Items */
+.tab-control-list-item {
+    /* Color */
+    background-color: white;
+    color: var(--primary-color);
+
+    /* Margin & padding */
+    padding: 5px;
+
+    /* Borders */
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+
+    /* Font configuration */
+    text-align: center;
+}
+
+/* Tab Control List Item Hover */
+.tab-control-list-item:hover {
+    /* Cursor */
+    cursor: pointer;
+}
+
+/* Tab Control List Item (Selected) */
+.tab-control-list-item-selected {
+    /* Color */
+    background-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+/* Tab Control Delete Button */
+#tab-control-delete-button {
+    /* Sizing */
+    width: 200px !important;
+
+    /* Color */
+    background-color: var(--red-color) !important;
+    color: white !important;
+
+    /* Borders */
+    border: 2px solid var(--red-color);
+
+    /* Margin & padding */
+    margin-bottom: 50px;
+}
+
+/* Tab Control Delete Button Hover */
+#tab-control-delete-button:hover {
+    /* Color */
+    background-color: white !important; 
+    color: var(--red-color) !important;
+}
+
+/**************************************
+ * JQuery Style Overrides
+ **************************************/
+
+/* JQuery Slider Handle Extension */
+.ui-slider-handle {
+    /* Color */
+    background-color: var(--secondary-color) !important;
+
+    /* Borders */
+    border: 2px solid white !important;
+    border-radius: 100% !important;
+}
+
+/* JQuery Error Messages */
+.error {
+    /* Font configuration */
+    color: var(--red-color) !important;
+}
+
+/* JQuery Tabs */
+.ui-tabs {
+    /* Borders */
+    border: 2px solid var(--primary-color) !important;
+    border-radius: var(--primary-border-radius) !important;
+}
+
+/* JQuery Tabs Panel */
+.ui-tabs-panel {
+    /* Margin & padding */
+    padding: 0 !important;
+}
+
+/* JQuery UI Tabs Nav */
+.ui-tabs-nav {
+    /* Borders */
+    border-top-left-radius: var(--primary-border-radius) !important;
+}
+
+/* JQuery UI Tabs Tab */
+.ui-tabs-tab {
+    /* Borders */
+    border: none !important;
+    border-top-right-radius: var(--primary-border-radius) !important;
+    border-top-left-radius: var(--primary-border-radius) !important;
+
+    /* Positioning */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* JQuery UI State Active */
+.ui-state-active {
+    /* Color */
+    background-color: var(--primary-color) !important;
+}
+
+/**************************************
+ * Media Queries
+ **************************************/
+
+@media only screen and (min-width: 768px) {
+    #tab-container {
+        /* Sizing */
+        width: 600px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #content-wrapper {
+        /* Sizing */
+        width: 100%;
+
+        /* Positioning */
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        justify-content: center;
+        align-content: center;
+
+        /* Margin & padding */
+        padding-left: var(--primary-margin);
+        padding-right: var(--primary-margin);
+    }
+
+    #main-form {
+        /* Margin & padding */
+        margin-bottom: 0;
+    }
+
+    #tab-container {
+        /* Sizing */
+        height: 547.2px;
+        width: auto;
+
+        /* Margin & padding */
+        margin-bottom: 0;
+        margin-left: var(--primary-margin);
+    }
+}
