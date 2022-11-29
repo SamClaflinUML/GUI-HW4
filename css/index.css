@@ -156,8 +156,8 @@ button:hover {
     transition-duration: 0.2s;
 }
 
-/* Submit Button */
-#submit-button {
+/* Tab Control Button */
+#tab-control-button {
     /* Margin & padding */
     margin-top: var(--primary-margin);
 }

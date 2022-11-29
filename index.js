@@ -31,7 +31,6 @@ const SLIDER_RULES = {
 };
 
 // Globals
-let mainFormSubmitted = false;
 let initialScrollPosition = 0;
 
 // Entry point
@@ -63,8 +62,7 @@ const initializeJQuerySliders = () => {
                 $(`#${idPair[1]}`).val(ui.value);
 
                 // Regenerate the table dynamically
-                if (mainFormSubmitted)
-                    $("#main-form").submit();
+                $("#main-form").submit();
             }
         });
 
@@ -81,8 +79,7 @@ const initializeJQuerySliders = () => {
                 $(`#${idPair[0]}`).slider("option", "value", newVal);
 
                 // Regenerate the main table dynamically
-                if (mainFormSubmitted)
-                    $("#main-form").submit();
+                $("#main-form").submit();
             }
         });
     });
@@ -160,9 +157,6 @@ const validateMainForm = () => {
 const handleMainFormSubmit = (_, event) => {
     // Prevent page reload
     event.preventDefault();
-
-    // Set the flag to indicate that the main form has been submitted
-    mainFormSubmitted = true;
     
     // Generate the multiplication table
     generateTable();
